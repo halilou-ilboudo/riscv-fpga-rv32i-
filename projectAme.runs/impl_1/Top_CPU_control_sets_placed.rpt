@@ -1,0 +1,141 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Sat Jan 24 12:09:22 2026
+| Host         : DESKTOP-J90IJH2 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file Top_CPU_control_sets_placed.rpt
+| Design       : Top_CPU
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    63 |
+|    Minimum number of control sets                        |    63 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    35 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    63 |
+| >= 0 to < 4        |     1 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     5 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    56 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              63 |           45 |
+| No           | No                    | Yes                    |              44 |           14 |
+| No           | Yes                   | No                     |              11 |            5 |
+| Yes          | No                    | No                     |            8225 |         2338 |
+| Yes          | No                    | Yes                    |            1214 |          579 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-----------------------------------+-------------------------------+------------------+----------------+--------------+
+|  Clock Signal  |           Enable Signal           |        Set/Reset Signal       | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-----------------------------------+-------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | U_IMEM/tx0                        |                               |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | U_BOOT/instr_buf[23]_i_1_n_0      | gpio_out_OBUF[5]              |                3 |              8 |         2.67 |
+|  clk_IBUF_BUFG | U_BOOT/instr_buf[15]_i_1_n_0      | gpio_out_OBUF[5]              |                5 |              8 |         1.60 |
+|  clk_IBUF_BUFG | U_BOOT/instr_buf[7]_i_1_n_0       | gpio_out_OBUF[5]              |                1 |              8 |         8.00 |
+|  clk_IBUF_BUFG | U_IMEM/out_reg[7]_i_8_0[0]        | U_BOOT/boot_done_reg_reg_0[2] |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG | U_IMEM/busy_reg_1[0]              | U_BOOT/boot_done_reg_reg_0[2] |                3 |              9 |         3.00 |
+|  clk_IBUF_BUFG |                                   | U_BOOT/boot_done_reg_reg_0[2] |                6 |             12 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_2[0]     | U_BOOT/boot_done_reg_reg_0[2] |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | U_IMEM/E[0]                       |                               |               32 |             32 |         1.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_6[0]     | U_BOOT/boot_done_reg_reg_0[2] |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[10]_4[0]     | U_BOOT/boot_done_reg_reg_0[2] |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_9[0]     | U_BOOT/boot_done_reg_reg_0[2] |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[10]_5[0]     | U_BOOT/boot_done_reg_reg_0[2] |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_5[0]     | U_BOOT/boot_done_reg_reg_0[2] |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_4[0]     | U_BOOT/boot_done_reg_reg_0[2] |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[7]_1[0]      | U_BOOT/boot_done_reg_reg_0[2] |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[9]_4[0]      | U_BOOT/boot_done_reg_reg_0[2] |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[8]_0[0]      | U_BOOT/boot_done_reg_reg_0[2] |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[9]_1[0]      | U_BOOT/boot_done_reg_reg_0[2] |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[9]_3[0]      | U_BOOT/boot_done_reg_reg_0[2] |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[7]_3[0]      | U_BOOT/boot_done_reg_reg_0[2] |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[9]_0[0]      | U_BOOT/boot_done_reg_reg_0[2] |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[9]_5[0]      | U_BOOT/boot_done_reg_reg_0[2] |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[9]_2[0]      | U_BOOT/boot_done_reg_reg_0[2] |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[8]_1[0]      | U_BOOT/boot_done_reg_reg_0[2] |               15 |             32 |         2.13 |
+|  clk_IBUF_BUFG | U_RX/sample_cnt                   | gpio_out_OBUF[5]              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | U_UART/UTX/bit_cnt[31]_i_1__0_n_0 | U_BOOT/boot_done_reg_reg_0[2] |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | U_RX/bit_cnt                      | gpio_out_OBUF[5]              |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | U_IMEM/busy_reg_0[0]              | U_BOOT/boot_done_reg_reg_0[2] |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_10[0]    | U_BOOT/boot_done_reg_reg_0[2] |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_13[0]    | U_BOOT/boot_done_reg_reg_0[2] |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[7]_2[0]      | U_BOOT/boot_done_reg_reg_0[2] |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[10]_3[0]     | U_BOOT/boot_done_reg_reg_0[2] |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[10]_1[0]     | U_BOOT/boot_done_reg_reg_0[2] |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_0[0]     | U_BOOT/boot_done_reg_reg_0[2] |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_11[0]    | U_BOOT/boot_done_reg_reg_0[2] |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_1[0]     | U_BOOT/boot_done_reg_reg_0[2] |               19 |             32 |         1.68 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_12[0]    | U_BOOT/boot_done_reg_reg_0[2] |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[10]_0[0]     | U_BOOT/boot_done_reg_reg_0[2] |               17 |             32 |         1.88 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[10]_2[0]     | U_BOOT/boot_done_reg_reg_0[2] |               16 |             32 |         2.00 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_7[0]     | U_BOOT/boot_done_reg_reg_0[2] |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_8[0]     | U_BOOT/boot_done_reg_reg_0[2] |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | U_IMEM/rdata_reg_reg[11]_3[0]     | U_BOOT/boot_done_reg_reg_0[2] |               14 |             32 |         2.29 |
+|  clk_IBUF_BUFG |                                   | gpio_out_OBUF[5]              |               13 |             43 |         3.31 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[10]_1       |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[10]_2       |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[11]_3       |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[11]_0       |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[9]_0        |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_we_reg_1              |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_we_reg_4              |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_we_reg_3              |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_we_reg_2              |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[11]_1       |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_we_reg_5              |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[8]_0        |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_we_reg_0              |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[11]_2       |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[9]_1        |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_waddr_reg[10]_0       |                               |               11 |             44 |         4.00 |
+|  clk_IBUF_BUFG | U_BOOT/imem_we_i_1_n_0            | gpio_out_OBUF[5]              |               15 |             52 |         3.47 |
+|  clk_IBUF_BUFG |                                   |                               |               45 |             63 |         1.40 |
+|  clk_IBUF_BUFG | U_DMEM//i__n_0                    |                               |             2305 |           8192 |         3.55 |
++----------------+-----------------------------------+-------------------------------+------------------+----------------+--------------+
+
+
